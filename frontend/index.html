@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+<h>hello world</h>
+<button class="ceshi">按钮</button>
+</body>
+<script type="text/javascript">
+    $(function (){
+        $(".ceshi").click(function (){
+            $.ajax({
+                type:"get",
+                url:"http://127.0.0.1:8000/ceshi",
+                data:{username:"ice",password:"123456"},
+                dataType:"json",
+                success:function (data){
+                    console.log(data)
+                }
+            })
+        })
+    })
+</script>
+</html>
