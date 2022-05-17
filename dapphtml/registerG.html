@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>学生登录</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="./css/style2.css" />
+    <script src="./external/js/flexible.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./external/js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!--logo-->
+    <div onclick="javascript:history.back(-1);"><svg t="1650000517028" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2547" width="32" height="32"><path d="M532.526499 904.817574L139.506311 511.797385 532.526499 118.777197c12.258185-12.258185 12.432147-32.892131-0.187265-45.51052-12.707416-12.707416-32.995485-12.703323-45.511543-0.187265L75.166957 484.739123c-7.120165 7.120165-10.163477 17.065677-8.990768 26.624381-1.500167 9.755178 1.5104 20.010753 8.990768 27.491121l411.660734 411.660734c12.258185 12.258185 32.892131 12.432147 45.511543-0.187265 12.707416-12.707416 12.7023-32.995485 0.187265-45.51052z" p-id="2548"></path></svg></div>
+
+    <div class="logo">
+        公司注册
+    </div>
+    <!--登陆-->
+    <form action="#" onSubmit="false">
+        <div class="item">
+            <i></i>
+            <input type="text" id="CompanyName" placeholder="请输入公司名称" />
+        </div>
+        <div class="item">
+            <i></i>
+            <input type="password" id="cpassword" placeholder="请输入密码" />
+        </div>
+        <div class="submit">
+            <button id="reglogin">注册</button>
+        </div>
+    </form>
+    <div class="register">
+        </span><a href="#">去登陆</a>
+    </div>
+</body>
+
+</html>
+<script>
+   
+    // 提交验证
+    $('#reglogin').click(function(e) {
+        var This = $(this);
+        e.preventDefault()
+        var CompanyName = $('#CompanyName').val()
+        var cpassword = $('#cpassword').val()
+        if (!cpassword) {
+            Dialog.init("密码不能为空")
+            return false;
+        }
+        if(!CompanyName){
+            Dialog.init("学校名称不能为空")
+            return false
+        }
+        $.ajax({
+            type:'POST',
+            url:'http://127.0.0.1:8000/regcom',
+            data:{companyName:CompanyName,companyPasswd:cpassword},
+            beforeSend:function(){
+				This.html('正在注册中...');
+			},
+            success:function(result){
+				if(result.data=="该公司已被注册"){
+                    This.html('注册');
+                    Dialog.init(result.data)
+				}else{
+					This.html('注册成功');
+					setTimeout(function(){
+							location.href = "./MyInfoG.html?user="+CompanyName;
+					},2000)
+				}
+			}
+        })
+    })
+</script>

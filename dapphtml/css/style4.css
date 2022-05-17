@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+    font-weight: normal;
+    font-family: "寰蒋闆呴粦";
+    box-sizing: border-box;
+    font-style: normal;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background: url(../img/大海1.png) top 0 left no-repeat rgb(155, 204, 233);
+    background-size: 100% auto;
+    color: #f3f7fc;
+}
+
+img {
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+input {
+    box-shadow: inset 0 0 0 1rem rgb(255, 255, 255)!important;
+}
+
+.container {
+    width: 100%;
+    padding: 0 .4rem;
+}
+
+
+/*LOGO*/
+
+.logo {
+    width: 100%;
+    padding: 1.5rem 0 1.6rem 0;
+    text-align: center;
+}
+
+.logo img {
+    width: 2rem;
+}
+
+
+/*鐧婚檰琛ㄥ崟*/
+
+form {
+    width: 100%;
+    padding: .75rem;
+    padding-bottom: 0;
+    margin-bottom: 10%;
+}
+
+form .item {
+    width: 100%;
+    height: .9rem;
+    border-bottom: .01rem solid #eeeeee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: .35rem;
+}
+
+form .item i {
+    flex-shrink: 0;
+    width: .32rem;
+    height: .9rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-right: .20rem;
+}
+
+form .item:nth-child(1) i {
+    background-image: url(../img/学生5.png);
+    background-size: .45rem auto;
+}
+
+form .item:nth-child(2) i {
+    background-image: url(../img/icon-lock.png);
+    background-size: .31rem auto;
+}
+
+form .item:nth-child(3) div {
+    display: flex;
+    width: 100%;
+}
+
+form .item:nth-child(3) div i {
+    background-image: url(../img/icon-verify.png);
+    background-size: .31rem auto;
+    height: .100rem;
+}
+
+form .item:nth-child(3) span {
+    flex-shrink: 0;
+    color: #999999;
+    font-size: .18rem;
+}
+
+form .item input {
+    font-size: .35rem;
+    color: #999;
+    text-align: left;
+    width: 90%;
+    height: 70%;
+    padding-right: .3rem;
+    border-radius: 10px;
+}
+
+form .submit {
+    width: 100%;
+    padding: .7rem;
+    padding-bottom: .3rem;
+}
+
+form .submit button {
+    width: 100%;
+    height: .9rem;
+    background: linear-gradient(to right, #6a77f7, #4280e6);
+    font-size: .34rem;
+    letter-spacing: 0.03rem;
+    border-radius: .9rem;
+}
+
+
+/*蹇樿瀵嗙爜锛屾敞鍐�*/
+
+.register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #477bff;
+}
+
+.register a {
+    font-size: .28rem;
+    letter-spacing: .01rem;
+}
+
+.register span {
+    padding: 0 .15rem;
+    font-size: .18rem;
+}
+
+
+/*绗笁鏂圭櫥闄�*/
+
+.other {
+    width: 100%;
+    padding: .65rem 1.35rem;
+}
+
+.other ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.other ul li {
+    width: .94rem;
+    text-align: center;
+}
+
+.other ul li img {
+    width: 100%
+}

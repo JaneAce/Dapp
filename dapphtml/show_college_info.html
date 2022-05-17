@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <!-- Basic Page Needs -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="utf-8">
+    <title>学院信息管理</title>
+    <meta name="description" content="A Template by Designzway team">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Designzway team">
+
+    <!-- Mobile Specific Metas-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="telephone=no" name="format-detection">
+
+    <!-- Fonts -->
+    <!-- Open Sans -->
+    <link href='http://fonts.useso.com/css?family=Open+Sans:300,400italic,600,700italic,400,700,800italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../dapphtml/css/shenshu/dialog.css">
+    <!-- VarelaRound -->
+    <link href='http://fonts.useso.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <!-- Icon Font - Font Awesome -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <!-- External -->
+    <!-- Mobile menu -->
+    <link href="external/z-nav/z-nav.css" rel="stylesheet">
+
+    <!-- Touch slider - Swiper -->
+    <link href="external/swiper/idangerous.swiper.css" rel="stylesheet" />
+
+    <!-- Custom -->
+    <link href="css/style.css?v=1" rel="stylesheet" />
+
+    <!-- Basic JavaScript-->
+    <!-- Modernizr -->
+    <script src="external/modernizr/modernizr.custom.js"></script>
+    <script src="../dapphtml/external/js/dialog.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]> 
+    	<script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script> 
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>		
+    <![endif]-->
+
+    <!--[if lte IE 9]>
+        <link href="css/ie9.css?v=1" rel="stylesheet" />
+    <![endif]-->
+    <style>
+        #search-form {
+            background-color: aliceblue;
+            color: aliceblue;
+        }
+        
+        #stu_back {
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper" id="top">
+        <!-- Header section -->
+        <header class="header">
+            <div class="header-fixed">
+                <div class="header-line header-line--shop waypoint" data-animate-down="header-up" data-animate-up="header-down">
+                    <div class="container">
+
+
+                    </div>
+                    <!-- end container -->
+                </div>
+
+                <div class="fixed-top header-down">
+                    <div class="container relative-element">
+                        <div id="stu_back" onclick="javascript:history.back(-1);">返回</div>
+                        <!--  Logo  -->
+                        <a class="logo logo--shop" href="./schoolinx.html">
+                            <!-- Remove comments to choose image and add comment to h1 -->
+                            <!--<img src="images/logo-full.png" alt="">-->
+                            <h1 class="logo__text">Welcom<span class="highlight">e</span><br>
+                                <span class="logo__slogan"></span>
+                            </h1>
+                        </a>
+                        <div class="devider-color"></div>
+
+                    </div>
+                    <!-- end fixed top block -->
+
+                </div>
+        </header>
+        <!-- end header section -->
+
+
+
+        <!-- Section show current page and breadcrumb -->
+        <section class="page-indecator">
+            <div class="container">
+                <h2 class="heading">学生信息</h2>
+                <form class="search search--centered" >
+                    <input class="search__field"  type="text" placeholder="查询学生"  autocapitalize="off" id="inputs">
+                    <button class="search__btn" type="button" id="select">
+                    <i class="fa fa-search" id="searchStudent"></i>
+                </button>
+                </form>
+                <div class="devider devider--bottom-m"></div>
+                <a class="mDialogs" id="mdialog4"><svg t="1648305272278" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3355" width="48" height="48"><path d="M940.809299 333.581448c-23.391756-57.684794-57.752332-109.431342-102.126982-153.805992-44.37465-44.37465-96.124268-78.736249-153.808038-102.128005C629.167536 55.056943 570.307987 43.603077 509.933945 43.603077c-60.375066 0-119.232568 11.453866-174.939311 34.044374-57.68377 23.391756-109.431342 57.753355-153.805992 102.128005-44.37465 44.37465-78.734202 96.122221-102.125959 153.805992C56.473199 389.288191 45.019333 448.145693 45.019333 508.519736c0 60.375066 11.453866 119.231545 34.044374 174.939311 23.391756 57.68377 57.751309 109.431342 102.125959 153.805992 44.37465 44.37465 96.122221 78.734202 153.805992 102.126982 55.706743 22.589484 114.565269 34.044374 174.939311 34.044374 60.374042 0 119.232568-11.453866 174.939311-34.044374 57.684794-23.391756 109.433388-57.752332 153.810085-102.126982 44.373627-44.373627 78.733179-96.122221 102.125959-153.805992 22.589484-55.706743 34.044374-114.564245 34.044374-174.939311C974.85265 448.145693 963.398784 389.288191 940.809299 333.581448zM905.988236 669.338445c-21.491477 52.999075-53.075823 100.559277-93.874017 141.357472-40.800241 40.799218-88.361467 72.383564-141.360542 93.875041-51.201126 20.761859-105.308441 31.289634-160.819732 31.289634-55.512315 0-109.61963-10.527774-160.818709-31.289634-52.999075-21.491477-100.558254-53.075823-141.357472-93.874017-40.799218-40.799218-72.382541-88.35942-93.875041-141.358495-20.762883-51.200102-31.289634-105.307418-31.289634-160.818709 0-55.511291 10.527774-109.618607 31.289634-160.818709 21.491477-52.999075 53.075823-100.558254 93.875041-141.357472 40.799218-40.800241 88.358397-72.384587 141.357472-93.877087 51.200102-20.762883 105.307418-31.290657 160.818709-31.290657 55.511291 0 109.618607 10.527774 160.819732 31.290657 52.999075 21.491477 100.5603 53.076846 141.359518 93.877087 40.799218 40.799218 72.383564 88.358397 93.875041 141.357472 20.761859 51.200102 31.289634 105.307418 31.289634 160.818709C937.278893 564.031027 926.750095 618.138342 905.988236 669.338445z" p-id="3356" fill="#040c5b"></path><path d="M810.369481 489.052359c-0.014326 0-0.029676 0-0.042979 0l-281.56577 0.635473 0.590448-282.148032c0.021489-10.376325-8.372691-18.804275-18.747993-18.826787-0.014326 0-0.025583 0-0.039909 0-10.356882 0-18.764366 8.385994-18.785855 18.747993l-0.591471 282.311761-281.725406 0.636496c-10.376325 0.023536-18.767436 8.453533-18.744923 18.829857 0.023536 10.361999 8.429996 18.744923 18.785855 18.744923 0.014326 0 0.029676 0 0.042979 0l281.561677-0.635473-0.590448 282.152125c-0.021489 10.375302 8.372691 18.804275 18.747993 18.825764 0.014326 0 0.025583 0 0.039909 0 10.355859 0 18.764366-8.385994 18.785855-18.747993l0.590448-282.314831 281.728476-0.636496c10.376325-0.023536 18.768459-8.453533 18.744923-18.829857C829.131801 497.435283 820.726364 489.052359 810.369481 489.052359z" p-id="3357" fill="#040c5b"></path></svg></a>
+            </div>
+        </section>
+        <!-- end section show current page and breadcrumb -->
+
+        <section class="container">
+            <h3 class="not-visible"></h3>
+            <div class="row">
+                <div class="col-sm-9">
+                    <!-- Wide table with range of cols -->
+                    <div class="table-responsive">
+                        <table class="table table-bordered table--wide table-present">
+                            <colgroup class="col-sm-width">
+                                <colgroup class="col-sm-width">
+                                    <colgroup class="col-sm-width">
+                                        <colgroup class="col-sm-width">
+                                            <colgroup class="col-sm-width">
+                                                <colgroup class="col-sm-width">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>科目名称</th>
+                                                            <th>科目代码</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                        <tr>
+                                                            <td id="subjectName"></td>
+                                                            <td id="subjcetPid"></td>
+                                                        </tr>
+                                                    </tbody>
+                        </table>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table--wide table-present">
+                            <colgroup class="col-sm-width">
+                                <colgroup class="col-sm-width">
+                                    <colgroup class="col-sm-width">
+                                        <colgroup class="col-sm-width">
+                                            <colgroup class="col-sm-width">
+                                                <colgroup class="col-sm-width">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>学生账号</th>
+                                                            <th>学生姓名</th>
+                                                            <th>操作</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                        <tr>
+                                                            <td id="studentAccount"></td>
+                                                            <td id="studentName"></td>
+<!-- <td class="table__wait"><i class="fa fa-spinner"></i> Pending</td> -->
+                                                            <td><a class="btn btn-primary btn-sm" id="manageScore">成绩管理</a></td>
+                                                        </tr>
+                                                    </tbody>
+                        </table>
+                    </div>
+
+
+
+
+
+                <!-- JavaScript-->
+                <!-- External-->
+                <!-- jQuery 1.10.1-->
+                <script src="http://ajax.useso.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+                <script>
+                    window.jQuery || document.write('<script src="external/jquery/jquery-1.10.1.min.js"><\/script>')
+                </script>
+                <!-- Bootstrap 3-->
+                <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+                <!-- Mobile menu -->
+                <script src="external/z-nav/jquery.mobile.menu.js"></script>
+                <!-- Touch slider - Swiper -->
+                <script src="external/swiper/idangerous.swiper.js"></script>
+
+                <!-- Twitter feed -->
+                <script src="external/twitterfeed/twitterfeed.js"></script>
+                <!-- Scroll to piugin -->
+                <script src="external/scrollto/jquery.scrollTo.min.js"></script>
+
+                <!-- Waypoints -->
+                <script src="external/waypoint/waypoints.min.js"></script>
+
+                <!-- Custom -->
+                <script src="js/custom.js"></script>
+               <script>
+                function  getQueryString(name) {
+                    var  reg =  new  RegExp( "(^|&)"  + name +  "=([^&]*)(&|$)" ,  "i" );
+                    var  r = window.location.search.substr(1).match(reg);
+                    if  ( r !=  null  ){
+                        return  decodeURI(r[2]);
+                    } else {
+                        return  null ;
+                    } 
+                }
+                var collageName = getQueryString('collageName')
+                var schoolName = getQueryString('schoolName')
+                console.log(collageName,schoolName)
+                var collageName = getQueryString('collageName')
+                $("#searchStudent").click(function(){
+                    studentName = $("#inputs").val()
+                    console.log(studentName);
+                    $.ajax({
+                        url:"http://localhost:8000/selectStudent",
+                        type:"post",
+                        data:{studentName:studentName},
+                        success:function(res){
+                            console.log(res.data)
+                             document.getElementById('studentName').innerHTML = res.data[0].student_name
+                             document.getElementById('studentAccount').innerHTML = res.data[0].student_account
+                        }
+                    })
+                })
+                   $("#manageScore").click(function(){
+                    var row = $(this).parent().parent().children(":first").text();
+                    console.log("获取",row)
+                        window.location.href="../dapphtml/添加成绩.html?account="+row+"&collageName="+collageName+"&schoolname="+schoolName
+                   })
+                    
+                   mdialog4.onclick = function() {
+                Dialog.init('<input type="text" placeholder="请输入"  style="margin:8px 0;width:100%;padding:11px 8px;font-size:15px; border:1px solid #999;"/>', {
+                    title: '请输入要添加的科目',
+                    button: {
+                        确定: function() {
+                            if (this.querySelector('input').value.length >= 0) {
+                                Dialog.init('你输入的内容是：' + this.querySelector('input').value);
+                                $.ajax({
+                                    url:"http://localhost:8000/addSubject",
+                                    data:{collageName:collageName,schoolName:schoolName,subjectName:this.querySelector('input').value},
+                                    type:"post",
+                                    success:function(res){
+                                        console.log(res.data)
+                                        document.getElementById('subjectName').innerHTML = res.data.subject_name
+                                    }
+                                })
+                                Dialog.close(this);
+                            } else {
+                                Dialog.init('你输入的内容不符合要求！', 1100);
+                            };
+                        },
+                        点击关闭: function() {
+                            Dialog.close(this);
+                        }
+                    }
+                });
+            }
+               </script>
+
+</body>
+
+</html>

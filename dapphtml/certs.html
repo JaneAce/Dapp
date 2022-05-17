@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../dapphtml/external/jquery/jquery-1.10.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../dapphtml/css/shenshu/dialog.css">
+    <script src="../dapphtml/external/js/dialog.js"></script>
+    <style>
+        body {
+            background: url(../dapphtml/img/certs.jpg);
+            background-repeat: no-repeat;
+        }
+        
+        .title {
+            color: goldenrod;
+            margin-top: 50px;
+            margin-left: 95px;
+        }
+        
+        .name {
+            margin-left: 50px;
+        }
+        
+        .article {
+            margin-left: 40px;
+        }
+        
+        .score {
+            margin-left: 0px;
+        }
+        
+        .img_honor {
+            margin-top: 120px;
+        }
+        
+        .end_speak {
+            margin-top: 40px;
+            margin-left: 12px;
+        }
+        
+        .hide_score {
+            color: red;
+            display: none;
+        }
+        
+        .hide_scores {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="test">
+        <div class="title">
+            <img src="../dapphtml/img/勋章、荣誉.png" width="50%" alt="">
+            <h1>荣 誉 证 书</h1>
+        </div>
+        <div class="name">
+            姓名:<span id="Stu_Name"></span>
+            <p>学校:<span id="Stu_Sch"></span></p>
+            <p>Account:<span id="StudentAccount"></span></p>
+
+        </div>
+        <div class="article">
+            <h5>
+                恭喜你,您的成绩全部合格,您的成绩如下:
+            </h5>
+        </div>
+        <div class="score">
+            <table>
+
+                <tr id="stu_subject">
+
+                </tr>
+
+                <tr id="stu_score">
+
+                </tr>
+
+
+
+            </table>
+        </div>
+        <hr>
+
+        <div style="font-size: xx-small;">hash:<span id="hashx"></span></div>
+
+        <hr>
+        <div>
+            <p>您可以通过单击编辑按钮删除敏感信息来编辑此证书。<a id="edit_score"><svg t="1651737590074" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="11620" width="16" height="16"><path d="M871.604706 269.854118c-10.24 0-18.070588 7.830588-18.070588 18.070588l0 661.985882c0 8.432941-7.830588 15.661176-18.070588 15.661176L187.331765 965.571765c-10.24 0-18.070588-7.228235-18.070588-15.661176L169.261176 287.924706c0-10.24-7.830588-18.070588-18.070588-18.070588s-18.070588 7.830588-18.070588 18.070588l0 661.985882c0 28.912941 24.094118 51.802353 54.211765 51.802353l648.131765 0c30.117647 0 54.211765-23.491765 54.211765-51.802353L889.675294 287.924706C889.675294 278.287059 881.242353 269.854118 871.604706 269.854118z" p-id="11621"></path><path d="M993.28 139.143529l-463.811765 0L529.468235 22.287059c0-10.24-7.830588-18.070588-18.070588-18.070588s-18.070588 7.830588-18.070588 18.070588l0 116.254118-463.811765 0c-10.24 0-18.070588 7.830588-18.070588 18.070588s7.830588 18.070588 18.070588 18.070588l963.764706 0c10.24 0 18.070588-7.830588 18.070588-18.070588S1002.917647 139.143529 993.28 139.143529z" p-id="11622"></path><path d="M346.955294 880.64 346.955294 391.529412c0-10.24-7.830588-18.070588-18.070588-18.070588s-18.070588 7.830588-18.070588 18.070588l0 488.508235c0 10.24 7.830588 18.070588 18.070588 18.070588S346.955294 890.277647 346.955294 880.64z" p-id="11623"></path><path d="M711.378824 880.64 711.378824 391.529412c0-10.24-7.830588-18.070588-18.070588-18.070588s-18.070588 7.830588-18.070588 18.070588l0 488.508235c0 10.24 7.830588 18.070588 18.070588 18.070588S711.378824 890.277647 711.378824 880.64z" p-id="11624"></path><path d="M527.661176 880.64 527.661176 391.529412c0-10.24-7.830588-18.070588-18.070588-18.070588s-18.070588 7.830588-18.070588 18.070588l0 488.508235c0 10.24 7.830588 18.070588 18.070588 18.070588S527.661176 890.277647 527.661176 880.64z" p-id="11625"></path></svg></a>
+                <a id="edit_ok"><svg t="1651741342367" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="14875" width="16" height="16"><path d="M511.950005 512.049995m-447.956254 0a447.956254 447.956254 0 1 0 895.912508 0 447.956254 447.956254 0 1 0-895.912508 0Z" fill="#20B759" p-id="14876"></path><path d="M458.95518 649.636559L289.271751 479.95313c-11.698858-11.698858-30.697002-11.698858-42.39586 0s-11.698858 30.697002 0 42.395859l169.683429 169.68343c11.698858 11.698858 30.697002 11.698858 42.39586 0 11.798848-11.598867 11.798848-30.597012 0-42.39586z" fill="#FFFFFF" p-id="14877"></path><path d="M777.62406 332.267552c-11.698858-11.698858-30.697002-11.698858-42.39586 0L424.158578 643.437164c-11.698858 11.698858-11.698858 30.697002 0 42.39586s30.697002 11.698858 42.39586 0l311.069622-311.069622c11.798848-11.798848 11.798848-30.796992 0-42.49585z" fill="#FFFFFF" p-id="14878"></path></svg></a>
+            </p>
+        </div>
+        <div><button id="download">下载</button></div>
+        <!-- <div><a class="down" href="" download="downImg">下载</a>
+        </div>
+        <div><a class="down2" href="" download="downImg">下载2</a></div> -->
+    </div>
+    <script>
+        
+        function  getQueryString(name) {
+                    var  reg =  new  RegExp( "(^|&)"  + name +  "=([^&]*)(&|$)" ,  "i" );
+                    var  r = window.location.search.substr(1).match(reg);
+                    if  ( r !=  null  ){
+                        return  decodeURI(r[2]);
+                    } else {
+                        return  null ;
+                    } 
+                }
+        var studentAccount = getQueryString('ac')
+        var certsName=""
+        function show_certs(){
+           
+                $.ajax({
+                url:"http://127.0.0.1:8000/certs",
+                type:"POST",
+                data:{studentAccount:studentAccount},
+                success:function(res){
+                    console.log(res.data.Subject)
+                    document.getElementById("Stu_Name").innerHTML=res.data.Students.student_name
+                    document.getElementById("Stu_Sch").innerHTML=res.data.Students.StudentSchool
+                    document.getElementById("StudentAccount").innerHTML = studentAccount
+                    certsName = res.data.Students.student_name
+                    console.log(certsName);
+                    var ths = $("#stu_subject")
+        var stu_score = $("#stu_score")
+        for (var i = 0; i < res.data.Subject.length; i++) {
+            var html = `
+             
+                    <th><span>${res.data.Subject[i].subject_name}</span><span class="hide_score" onclick="del(this)">X</span></th>
+                   
+            `
+            var html2 = `
+            
+                    <td><span>${res.data.Subject[i].score}</span><span class="hide_score" onclick="del(this)">X</span></td>
+                
+            `
+            ths.append(html)
+            stu_score.append(html2)
+        }
+
+        $("#ths  tr:not(:first)").empty("");
+        document.getElementById("hashx").innerHTML=res.data.CertHash
+        return certsName
+                }
+                
+            })
+            
+    
+        }
+        show_certs()
+        $("#download").click(function(){
+            $.ajax({
+                url:"http://127.0.0.1:8000/downloadCert",
+                type:"POST",
+                data:{certsName:studentAccount},
+                success:function(){
+                    Dialog.init("下载成功！")
+                }
+            })
+        })
+        $("#edit_score").click(function() {
+            $(".hide_score").show()
+            $(".hide_scores").show()
+        })
+        $("#edit_ok").click(function() {
+            $(".hide_score").hide()
+            $(".hide_scores").hide()
+        })
+
+        function del(obj) {
+            var res = obj.parentNode.parentNode.children
+            for (var i = 0; i < res.length; i++) {
+                if (obj == res[i].children[1]) {
+                    res[i].removeChild(res[i].children[0])
+                    res[i].removeChild(res[i].children[0])
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <!-- Basic Page Needs -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="utf-8">
+    <title>学生信息管理</title>
+    <meta name="description" content="A Template by Designzway team">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Designzway team">
+
+    <!-- Mobile Specific Metas-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="telephone=no" name="format-detection">
+
+    <!-- Fonts -->
+    <!-- Open Sans -->
+    <link href='http://fonts.useso.com/css?family=Open+Sans:300,400italic,600,700italic,400,700,800italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../dapphtml/css/shenshu/dialog.css">
+    <!-- VarelaRound -->
+    <link href='http://fonts.useso.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <!-- Icon Font - Font Awesome -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <!-- External -->
+    <!-- Mobile menu -->
+    <link href="external/z-nav/z-nav.css" rel="stylesheet">
+
+    <!-- Touch slider - Swiper -->
+    <link href="external/swiper/idangerous.swiper.css" rel="stylesheet" />
+
+    <!-- Custom -->
+    <link href="css/style.css?v=1" rel="stylesheet" />
+
+    <script src="../dapphtml/external/js/dialog.js"></script>
+    <script src="./external/modernizr/modernizr.custom.js"></script>
+   
+    <style>
+        #search-form {
+            background-color: aliceblue;
+            color: aliceblue;
+        }
+        
+        #stu_back {
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <header class="header">
+            <div class="header-fixed">
+                <div class="header-line waypoint" data-animate-down="header-up" data-animate-up="header-down">
+                    <div class="container">
+                    </div>
+                </div>
+
+                <div class="fixed-top header-down">
+                    <div class="container">
+                        <!--  Logo  -->
+                        <a class="logo" href="../Home/FirstView.html">
+                            <h1 class="logo__text">Welcom<span class="highlight">e</span><br>
+                                <span class="logo__slogan" style="font-size:medium">学校信息</span>
+                            </h1>
+                        </a>
+                        <nav class="z-nav">
+                            <a href="#" class="z-nav__toggle">
+                                <span class="menu-icon"><svg t="1646815807191" class="icon" viewBox="0 0 1100 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="28779" width="32" height="32"><path d="M683.460026 773.889666c-3.216382 22.385839-24.040677 38.003505-46.386534 34.773796-22.396946-3.24859-37.981293-24.088434-34.754915-46.437623 2.070213-14.415965 11.42282-25.966508 23.801892-31.538533a40.904469 40.904469 0 0 1 22.603522-3.19528c22.363627 3.258586 37.966855 24.054004 34.736035 46.39764m-29.381692-83.472659c-42.832521-6.162881-82.671896 23.704156-88.832555 66.4556-6.17843 42.79698 23.625302 82.668564 66.474481 88.862543 15.242273 2.20682 30.124703-0.155488 43.227905-6.066256 23.703046-10.659818 41.611939-32.866846 45.601319-60.387124 6.16177-42.833631-23.673059-82.686334-66.47115-88.864763M381.414456 518.792607c-1.563766 10.849735-7.250187 20.448902-16.007497 26.983844-8.822837 6.486074-19.595939 9.30374-30.426794 7.768851-10.818638-1.579315-20.417805-7.264625-26.953857-16.021935-6.581588-8.772859-9.332616-19.577059-7.78551-30.380148 1.563766-10.850846 7.244633-20.446681 16.037484-26.999393a42.219453 42.219453 0 0 1 7.777735-4.590229 40.643471 40.643471 0 0 1 22.617961-3.164183c10.866395 1.600416 20.416694 7.265735 26.999393 16.038595 6.570482 8.746204 9.32151 19.550403 7.741085 30.364598m-29.382803-83.47377c-20.757657-3.007584-41.386482 2.358976-58.185857 14.815792-16.787158 12.564547-27.670213 30.897701-30.678907 51.655358-2.972043 20.742108 2.292338 41.417579 14.845779 58.170308 12.568989 16.784937 30.898811 27.672434 51.609822 30.662247 14.987939 2.162395 29.891471 0.029987 43.291211-6.019609 5.212182-2.354534 10.206681-5.326577 14.929076-8.812842 16.784937-12.567879 27.670213-30.89659 30.657804-51.60649 2.990924-20.793197-2.256798-41.434239-14.862438-58.206959-12.532338-16.800486-30.859939-27.686872-51.60649-30.657805M571.802933 302.409857l0.016659 0.03554c-4.215948 29.355037-31.622941 49.888347-60.92911 45.606872-29.402794-4.235939-49.87502-31.589623-45.65463-60.94577 2.063549-14.252703 9.536972-26.815028 21.051974-35.441284 3.224156-2.384521 6.651557-4.428078 10.230005-6.05515 9.230438-4.147089 19.428234-5.610898 29.680451-4.127098 14.252703 2.064659 26.815028 9.536972 35.442395 21.056417 8.606265 11.485015 12.209145 25.663306 10.162256 39.870473m-40.25253-98.001909c-24.163957-3.507367-48.202412 2.728816-67.729492 17.260286-19.492651 14.593666-32.187141 35.934403-35.661189 60.082812-7.165779 49.808382 27.555818 96.173813 77.375306 103.377353a90.568469 90.568469 0 0 0 50.307054-7.084703c27.57692-12.423497 48.434534-38.213414 53.05253-70.245067 3.454056-24.182837-2.64885-48.196859-17.258065-67.72505-14.611436-19.529302-35.972165-32.174924-60.086144-35.665631" fill="#FF962F" p-id="28780"></path><path d="M951.287115 579.14197c-15.27226 105.94957-70.844807 199.53895-156.500963 263.671115-85.80498 64.079965-191.229223 91.009388-297.117709 75.787106-74.877501-10.809753-143.779818-41.959566-200.900582-90.205293 87.564217-43.179037 205.280902-114.513631 361.463115-231.663896 125.190108-93.974768 209.545718-168.902247 266.371054-228.297579 27.727965 66.414508 37.041701 138.732009 26.685085 210.708547m83.560399-411.522499c-14.298239-26.178638-54.194256-48.169093-163.219158-4.259263-9.704677 4.244824-14.223826 14.786915-10.349953 24.383861 3.859436 9.563627 14.789137 14.227158 24.352764 10.364391 74.53987-30.030299 109.241475-25.536694 115.699783-13.92951 0.235453 0.93515 12.054768 99.189171-365.612425 382.538412-279.413171 209.649007-429.799011 266.303306-494.621987 281.523367-17.533501 4.080451-31.328625 2.564443-36.878438-4.080451-5.849683-7.028061-4.751271-21.638386 2.899852-39.061935 29.688226-67.900529 72.789518-107.480017 73.208226-107.876512 7.024729-6.369458 7.793284-16.689423 2.593319-24.305007-0.214351-0.981796-0.171037-2.008017-0.549762-2.993145-25.792139-64.673041-34.139627-135.594482-24.141744-204.988807C189.749866 246.267557 393.273753 94.06695 611.87443 125.538846c63.884495 9.196009 125.101258 33.850863 177.093136 71.357918 8.353041 6.022941 20.043523 4.145978 26.149762-4.202621 6.022941-8.434117 4.144868-20.125709-4.255931-26.168642-56.845328-41.025527-123.810707-68.020477-193.631514-78.057232-115.809735-16.694976-231.26518 12.743358-324.917866 82.814056-93.684894 70.082915-154.495167 172.497354-171.156824 288.295983-10.693137 74.101171-1.920278 149.639497 24.732599 219.090464-15.755384 16.583913-48.401215 54.901727-73.104937 111.361666-18.698551 42.735896-6.386117 67.233041 2.647739 78.080555 8.81062 10.624278 30.203557 26.87056 74.197796 16.587246 27.923436-6.517171 64.177701-18.408677 110.245484-38.974196 64.850742 59.222074 144.912659 97.331089 232.440226 109.952278 85.193024 12.262456 168.325831-0.977354 241.564043-33.971922 132.263705-59.527497 232.32472-183.3482 254.49843-337.173657 12.144729-84.412252-0.479792-169.2421-36.095445-246.117623 103.944885-118.07764 86.321423-163.869987 82.566386-170.793648" fill="#FF962F" p-id="28781"></path></svg></span>
+                                <span class="menu-text">导航栏</span>
+                                <div class="menu-head"></div>
+                            </a>
+                            <ul class="z-nav__list">
+                                <li class="z-nav__item">
+                                    <span class="z-nav__toggle-sub plus"><i class="fa fa-plus"></i><i class="fa fa-minus"></i></span>
+                                    <span class="z-nav__link" id="home">首页</span>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="devider-color"></div>
+
+                </div>
+
+            </div>
+        </header>
+
+        <!-- Section show current page and breadcrumb -->
+        <section class="page-indecator">
+            <div class="container">
+                <h2 class="heading">学生信息</h2>
+
+                <form class="search search--centered" id="search-form" name="search-form" method="get" action="#">
+                    <input class="search__field" name="search-request" type="search" placeholder="search" value="">
+                    <button class="search__btn" type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+                </form>
+                <div class="devider devider--bottom-m"></div>
+                <a class="mDialogs" id="mdialog4"><svg t="1648305272278" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3355" width="48" height="48"><path d="M940.809299 333.581448c-23.391756-57.684794-57.752332-109.431342-102.126982-153.805992-44.37465-44.37465-96.124268-78.736249-153.808038-102.128005C629.167536 55.056943 570.307987 43.603077 509.933945 43.603077c-60.375066 0-119.232568 11.453866-174.939311 34.044374-57.68377 23.391756-109.431342 57.753355-153.805992 102.128005-44.37465 44.37465-78.734202 96.122221-102.125959 153.805992C56.473199 389.288191 45.019333 448.145693 45.019333 508.519736c0 60.375066 11.453866 119.231545 34.044374 174.939311 23.391756 57.68377 57.751309 109.431342 102.125959 153.805992 44.37465 44.37465 96.122221 78.734202 153.805992 102.126982 55.706743 22.589484 114.565269 34.044374 174.939311 34.044374 60.374042 0 119.232568-11.453866 174.939311-34.044374 57.684794-23.391756 109.433388-57.752332 153.810085-102.126982 44.373627-44.373627 78.733179-96.122221 102.125959-153.805992 22.589484-55.706743 34.044374-114.564245 34.044374-174.939311C974.85265 448.145693 963.398784 389.288191 940.809299 333.581448zM905.988236 669.338445c-21.491477 52.999075-53.075823 100.559277-93.874017 141.357472-40.800241 40.799218-88.361467 72.383564-141.360542 93.875041-51.201126 20.761859-105.308441 31.289634-160.819732 31.289634-55.512315 0-109.61963-10.527774-160.818709-31.289634-52.999075-21.491477-100.558254-53.075823-141.357472-93.874017-40.799218-40.799218-72.382541-88.35942-93.875041-141.358495-20.762883-51.200102-31.289634-105.307418-31.289634-160.818709 0-55.511291 10.527774-109.618607 31.289634-160.818709 21.491477-52.999075 53.075823-100.558254 93.875041-141.357472 40.799218-40.800241 88.358397-72.384587 141.357472-93.877087 51.200102-20.762883 105.307418-31.290657 160.818709-31.290657 55.511291 0 109.618607 10.527774 160.819732 31.290657 52.999075 21.491477 100.5603 53.076846 141.359518 93.877087 40.799218 40.799218 72.383564 88.358397 93.875041 141.357472 20.761859 51.200102 31.289634 105.307418 31.289634 160.818709C937.278893 564.031027 926.750095 618.138342 905.988236 669.338445z" p-id="3356" fill="#040c5b"></path><path d="M810.369481 489.052359c-0.014326 0-0.029676 0-0.042979 0l-281.56577 0.635473 0.590448-282.148032c0.021489-10.376325-8.372691-18.804275-18.747993-18.826787-0.014326 0-0.025583 0-0.039909 0-10.356882 0-18.764366 8.385994-18.785855 18.747993l-0.591471 282.311761-281.725406 0.636496c-10.376325 0.023536-18.767436 8.453533-18.744923 18.829857 0.023536 10.361999 8.429996 18.744923 18.785855 18.744923 0.014326 0 0.029676 0 0.042979 0l281.561677-0.635473-0.590448 282.152125c-0.021489 10.375302 8.372691 18.804275 18.747993 18.825764 0.014326 0 0.025583 0 0.039909 0 10.355859 0 18.764366-8.385994 18.785855-18.747993l0.590448-282.314831 281.728476-0.636496c10.376325-0.023536 18.768459-8.453533 18.744923-18.829857C829.131801 497.435283 820.726364 489.052359 810.369481 489.052359z" p-id="3357" fill="#040c5b"></path></svg></a>
+            </div>
+        </section>
+        <!-- end section show current page and breadcrumb -->
+
+        <section class="container">
+            <h3 class="not-visible"></h3>
+            <div class="row">
+                <div class="col-sm-9">
+                    <!-- Wide table with range of cols -->
+                    <div class="table-responsive">
+                        <table class="table table-bordered table--wide table-present">
+                            <colgroup class="col-sm-width">
+                                <colgroup class="col-sm-width">
+                                    <colgroup class="col-sm-width">
+                                        <colgroup class="col-sm-width">
+                                            <colgroup class="col-sm-width">
+                                                <colgroup class="col-sm-width">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>姓名</th>
+                                                            <th>入学日期</th>
+                                                            <th>账号</th>
+                                                            <th>操作</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                        <tr>
+                                                            <td id="studentName"></td>
+                                                            <td id="studentStartTime"></td>
+                                                            <td id="studentAccount"></td>
+                                                            <td><span class="btn btn-primary btn-sm" id="mangeScore">成绩管理</span></td>
+                                                        </tr>
+                                                    </tbody>
+                        </table>
+                    </div>
+
+                <!-- JavaScript-->
+                <!-- External-->
+                <!-- jQuery 1.10.1-->
+                <script src="http://ajax.useso.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+                <script>
+                    window.jQuery || document.write('<script src="external/jquery/jquery-1.10.1.min.js"><\/script>')
+                </script>
+                <!-- Bootstrap 3-->
+                <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+                <!-- Mobile menu -->
+                <script src="external/z-nav/jquery.mobile.menu.js"></script>
+                <!-- Touch slider - Swiper -->
+                <script src="external/swiper/idangerous.swiper.js"></script>
+
+                <!-- Twitter feed -->
+                <script src="external/twitterfeed/twitterfeed.js"></script>
+                <!-- Scroll to piugin -->
+                <script src="external/scrollto/jquery.scrollTo.min.js"></script>
+
+                <!-- Waypoints -->
+                <script src="external/waypoint/waypoints.min.js"></script>
+                <script src="./external/js/custom.js"></script>
+                <script type="text/html" id="add">
+                    <style>
+                        .wrapper {
+                            background-color: #fff;
+                        }
+                        
+                        .wrapper .input-data {
+                            width: 100%;
+                            height: 45px;
+                            position: relative;
+                        }
+                        
+                        .wrapper .input-data input {
+                            width: 100%;
+                            height: 100%;
+                            border: none;
+                            border-bottom: 2px solid rgb(0, 0, 0);
+                            font-size: 17px;
+                        }
+                        
+                        .wrapper .input-data .underline {
+                            position: absolute;
+                            bottom: 0px;
+                            height: 2px;
+                            width: 100%;
+                        }
+                        
+                        .input-data .underline:before {
+                            position: absolute;
+                            content: "";
+                            height: 100%;
+                            width: 100%;
+                            background: #4158D0;
+                            transform: scaleX(0);
+                            transition: transform 0.3s ease;
+                        }
+                        
+                        .input-data input:focus~.underline:before,
+                        .input-data input:valid~.underline:before {
+                            transform: scaleX(1);
+                        }
+                    </style>
+                        <div class="wrapper" id="add">
+                           
+                            <div class="input-data">
+                                <input type="text" required="" placeholder="学生姓名" autocomplete="off" id="studentName"/>
+                                <div class="underline"></div>
+                            </div>
+                            <div class="input-data">
+                                <input type="text" required="" placeholder="学生性别" autocomplete="off" id="StudentSex"/>
+                                <!-- <input id="StudentSex" type="text" list="typelist1" placeholder="学生性别">
+                                    <datalist id="typelist1">
+                                       <option >男</option>
+                                       <option>女</option>
+                                    </datalist> -->
+                                <div class="underline"></div>
+                            </div>
+                            <div class="input-data">
+                                <input type="text" required="" placeholder="身份证号" id="StudentId" autocapitalize="off"/>
+                                <div class="underline"></div>
+                            </div>
+                            <div class="input-data">
+                                <input type="text" required="" placeholder="所属学院" id="collegeName" autocomplete="off"/>
+                                <div class="underline"></div>
+                            </div>
+                            <div class="input-data">
+                                <input type="text" required="" placeholder="学生专业" id="StudnetSpecial" autocapitalize="off"/>
+                                <div class="underline"></div>
+                            </div>
+                            <div class="input-data">
+                                <input type="number" required="" placeholder="入学时间" id="studnetStartTime" autocomplete="off"/>
+                                <div class="underline"></div>
+                            </div>
+                            <div class="input-data">
+                                <input type="number" required="" placeholder="学制" list="typelist2" id="StudentSystem"/>
+                                <datalist id="typelist2">
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                 </datalist>
+                                <div class="underline"></div>
+                            </div>
+                            <div class="input-data">
+                                <input type="text" required="" placeholder="等级" list="typelist3" id="studentLevel"/>
+                                <datalist id="typelist3">
+                                    <option>本科</option>
+                                    <option>专科</option>
+                                    <option>研究生</option>
+                                </datalist>
+                                <div class="underline"></div>
+                            </div>
+                    </div>
+                    </script>
+                <script>
+                    $("#mangeScore").click(function(){
+                        var row = $(this).parent().parent().children(":first").text();
+                        window.location.href="../dapphtml/添加成绩.html?account="+row
+                    })
+                    $("#home").click(function(){
+        window.location.href="../dapphtml/schoolinx.html?user="+user
+    })
+                        var test = window.location.search;
+                        var parm=decodeURI(test)
+                        user = parm.slice(6);
+                        console.log(user)
+                        var adds = $("#add").html()
+                        mdialog4.onclick = function() {
+                            Dialog.init(adds, {
+                                title: '添加',
+                                button: {
+                                    确定: function() {
+                                        if (this.querySelector('input').value.length >= 0) {
+                                            var test = window.location.search;
+                                            var parm=decodeURI(test)
+                                            var user = parm.slice(6);
+                                            var sname = this.querySelector("#studentName").value
+                                            var collageName = this.querySelector('#collegeName').value
+                                            var StudnetSpecial = this.querySelector("#StudnetSpecial").value
+                                            var StudentSystem = this.querySelector("#StudentSystem").value
+                                            var StudentSex = this.querySelector("#StudentSex").value
+                                            var StudentId = this.querySelector("#StudentId").value
+                                            var studentLevel = this.querySelector("#studentLevel").value
+                                            var studnetStartTime = this.querySelector("#studnetStartTime").value
+                                             $.ajax({
+                                             type:'post',
+                                             url:'http://127.0.0.1:8000/addStudent',
+                                             data:{StudentSchool:user,studentName:sname,collegeName:collageName,studentLevel:studentLevel,schoolName:user,studnetStartTime:studnetStartTime,StudentId:StudentId,StudentSex:StudentSex,StudentSystem:StudentSystem,StudnetSpecial:StudnetSpecial},
+                                            //  beforeSend:function(){
+                                            //      Dialog.init("正在添加中...")
+                                            //  },
+                                             success:function (res){
+                                                Dialog.close(adds)
+                                                console.log("创建学生的返回值",res.data)
+                                                document.getElementById('studentName').innerHTML = sname
+                                                document.getElementById('studentStartTime').innerHTML = studnetStartTime
+                                                document.getElementById('studentAccount').innerHTML = res.data.student_account
+                                          }
+                                         })
+                                        
+                                         
+                                        } else {
+                                            Dialog.init('你输入的内容不符合要求！', 1100);
+                                        };
+                                    },
+                                    点击关闭: function() {
+                                        Dialog.close(this);
+                                    }
+                                }
+                            });
+                        }
+                </script>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>卡包</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="../dapphtml/css/shenshu/shenshu.css" />
+    <link rel="stylesheet" type="text/css" href="../dapphtml/css/shenshu/dialog.css">
+    <script src="../dapphtml/external/js/flexible.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../dapphtml/external/js/dialog.js"></script>
+</head>
+<style>
+    #ok {
+        margin-left: -20px;
+    }
+    
+    #login_click a:hover {
+        background: #1e4066;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <!--顶部-->
+        <div class="top-bar">
+            <i id="ok"><a onclick="javascript:history.back(-1);"><svg t="1648228657197" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4896" width="32" height="32"><path d="M532.526499 904.817574L139.506311 511.797385 532.526499 118.777197c12.258185-12.258185 12.432147-32.892131-0.187265-45.51052-12.707416-12.707416-32.995485-12.703323-45.511543-0.187265L75.166957 484.739123c-7.120165 7.120165-10.163477 17.065677-8.990768 26.624381-1.500167 9.755178 1.5104 20.010753 8.990768 27.491121l411.660734 411.660734c12.258185 12.258185 32.892131 12.432147 45.511543-0.187265 12.707416-12.707416 12.7023-32.995485 0.187265-45.51052z" p-id="4897" fill="#2c2c2c"></path></svg></a></i>
+            <span>學生申述</span>
+        </div>
+        <!-- 卡包列表 -->
+        <div class="card-list">
+            <div class="item blue">
+                <div class="name">
+                    <h3>來自xx同學的成績申述</h3>
+                    <span id="wait">待查閲</span>
+                </div>
+                <div class="time">
+                    <i>申述成績:</i>
+                    <span>語文</span>
+                    <i>理由:</i>
+                    <i>閲卷錯誤</i>
+                </div>
+                <div class="detail">
+                    <a class="mDialogs" id="mdialog9">批准</a>
+                    <a class="mDialogs" id="mdialog4">駁回</a>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            mdialog9.onclick = function() {
+                Dialog.init("批准中", {
+                    mask: 0,
+                    addClass: 'dialog_load',
+                    time: 1000,
+                    after: function() {
+                        Dialog.init('批准成功！', 1000);
+                        document.getElementById("wait").innerHTML = "已查阅"
+                    }
+                });
+            }
+            mdialog4.onclick = function() {
+                Dialog.init('<input type="text" placeholder="请输入5个字符"  style="margin:8px 0;width:100%;padding:11px 8px;font-size:15px; border:1px solid #999;"/>', {
+                    title: '请输入驳回理由',
+                    button: {
+                        确定: function() {
+                            if (this.querySelector('input').value.length >= 5) {
+                                Dialog.init('你输入的内容是：' + this.querySelector('input').value);
+                                Dialog.close(this);
+                            } else {
+                                Dialog.init('你输入的内容不符合要求！', 1100);
+                            };
+                        },
+                        点击关闭: function() {
+                            Dialog.close(this);
+                        }
+                    }
+                });
+            }
+        </script>
+</body>
+
+</html>

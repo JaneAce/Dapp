@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>表格制作</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="../dapphtml/css/score/scorecss.css" />
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../dapphtml/css/shenshu/dialog.css">
+
+
+    <script src="../dapphtml/external/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../dapphtml/external/jquery/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../dapphtml/external/jquery/bootbox.min.js"></script>
+    <script src="../dapphtml/external/js/dialog.js"></script>
+    <style>
+        .comeback {
+            position: absolute;
+            left: 1px;
+            top: -1px;
+        }
+        
+        .bk {
+            position: absolute;
+            left: -1px;
+            top: -1px;
+        }
+        
+        .zhenshu {
+            background-image: url(../dapphtml/img/证书生成.jpg);
+        }
+        
+        #zszs {
+            text-align: center;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="title">成绩管理
+            <div class="bk" onclick="javascript:history.back(-1);">返回</div>
+        </div>
+        <div class="content">
+            <!--搜索输入框及查询、重置按钮-->
+            <div class="container content_width">
+                <div class="person_search">
+                    <div class="search_input">
+                        <div class="input-group mb-3">
+                            <span id="studentName"></span>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <!--添加按钮及bootstrap的模态框-->
+            </div>
+            <!--表格列表-->
+            <a href="#" class="mDialogs" id="mdialog7">添加</a>
+            <table id="tb" class="table">
+                <thead>
+                    <tr>
+                        <th>学科名称</th>
+                        <th>分数</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="show_tbody">
+                     <!-- <tr> 
+                        <td id="subjectName"></td>
+                        <td id="score"></td>
+                        <td>
+                            <a href="#" class="mDialogs" id="mdialog6">修改</a>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script type="text/html" id="change">
+        语文:<input type="text" placeholder="语文">
+        <hr> 数学:
+        <input type="text" placeholder="数学">
+        <hr> 英语:
+        <input type="text" placeholder="英语">
+        <hr>
+    </script>
+    <script type="text/html" id="add">
+        <input type="text" placeholder="请输入你要添加的科目" id="subjcet">
+        <hr>
+        <input type="text" placeholder="请输入分数" id="score">
+        <hr>
+    </script>
+    <script>
+        function  getQueryString(name) {
+                    var  reg =  new  RegExp( "(^|&)"  + name +  "=([^&]*)(&|$)" ,  "i" );
+                    var  r = window.location.search.substr(1).match(reg);
+                    if  ( r !=  null  ){
+                        return  decodeURI(r[2]);
+                    } else {
+                        return  null ;
+                    } 
+                }
+        
+        // function getAddScore(){
+        //     $.ajax({
+        //         url:"http://127.0.0.1:8000/addScoreMg",
+        //         type:'GET',
+        //         data:{studentAc:studentAccount},
+        //         success:function(res){
+        //             console.log(res.data)
+        //             document.getElementById("studentName").innerHTML = res.data.student_name
+        //         }
+        //     })
+        // }
+        // getAddScore()
+        var change = $("#change").html()
+        var add = $("#add").html()
+        var studentAccount = getQueryString('account')
+        var collageName = getQueryString('collageName')
+        var schoolName = getQueryString('schoolName')
+        console.log("url获取的数据",studentAccount,collageName,schoolName)
+        $("body").on("click","#mdialog6",function(){
+            Dialog.init(change, {
+                title: '',
+                button: {
+                    修改: function() {
+                        Dialog.close(this);
+                    }
+                }
+            });
+        })
+        // mdialog6.onclick = function() {
+        //     Dialog.init(change, {
+        //         title: '',
+        //         button: {
+        //             修改: function() {
+        //                 Dialog.close(this);
+        //             }
+        //         }
+        //     });
+        // }
+        mdialog7.onclick = function() {
+            Dialog.init(add, {
+                title: '',
+                button: {
+                    添加: function() {
+                        $.ajax({
+                                type:'post',
+                                url:'http://127.0.0.1:8000/addScore',
+                                data:{subject:this.querySelector('#subjcet').value,score:this.querySelector('#score').value,collageName:collageName,schoolName:schoolName,studentAc:studentAccount},
+                                success:function (data){
+                                                   console.log(data);
+                                                   
+                                            }
+                                        })
+                                    Dialog.close(this)
+                                window.location.reload()
+                    }
+                }
+            });
+        }
+        var stu_score=[]
+        function showScore(){
+            $.ajax({
+            type:"POST",
+            url:'http://127.0.0.1:8000/addScoreMg',
+            data:{studentAccount:studentAccount},
+            success:function(res){
+                // console.log(res.data);
+                stu_score=res.data
+                console.log(stu_score);
+                var tb=$("#show_tbody")
+                for(var i =0;i<stu_score.length;i++){
+                    var htmls=`<tr> 
+                        <td id="subjectName">${stu_score[i].subject_name}</td>
+                        <td id="score">${stu_score[i].score}</td>
+                        <td>
+                            <a href="#" class="mDialogs" id="mdialog6">修改</a>
+                        </td>
+                    </tr>`
+                //    console.log(stu_score[i].Subject);
+                //    console.log(htmls);
+                tb.append(htmls)
+                }
+
+            }
+            })
+        }
+        showScore()
+
+        
+
+    </script>
+</body>
+
+</html>

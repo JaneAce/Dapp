@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>申述成绩</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../dapphtml/css/unsupport_score.css">
+    <link rel="stylesheet" type="text/css" href="../dapphtml/css/shenshu/dialog.css">
+    <script src="../dapphtml/external/js/dialog.js"></script>
+</head>
+<style>
+    #back {
+        margin-left: 160px;
+        margin-top: -50px;
+    }
+    
+    .come {
+        margin-left: 200px;
+        margin-top: -30px;
+    }
+    
+    #comeback {
+        background-color: #0c648d;
+        color: aliceblue;
+    }
+    
+    #mdialog9 {
+        margin-left: 85px;
+    }
+</style>
+
+<body>
+    <div id="comeback" onclick="javascript:history.back(-1);"><svg t="1650173604700" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1254" width="32" height="32"><path d="M624.788992 204.047974 585.205965 164.464026 219.560038 530.185011 585.205965 895.864013 624.788992 856.280986 298.663014 530.16105Z" p-id="1255" fill="#ffffff"></path></svg></div>
+    <header class="hero">
+        <div class="hero-inner">
+            <div class="hero-text">
+                <h2>申述成绩</h2>
+                <p>我们将倾听您的诉求</p>
+                <div class="come"><a class="mDialogs" id="mdialog6"><svg t="1648230902040" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6439" width="32" height="32"><path d="M461.793333 559.62L33.866667 131.693333A53.073333 53.073333 0 0 1 53.333333 128h437.333334a320.033333 320.033333 0 0 0 15.166666 402.666667l-28.94 28.933333a10.666667 10.666667 0 0 1-15.08 0zM746.666667 640a318.76 318.76 0 0 1-210.666667-79.146667l-28.933333 28.94a53.333333 53.333333 0 0 1-75.426667 0L3.693333 161.866667A53.073333 53.073333 0 0 0 0 181.333333v661.333334a53.393333 53.393333 0 0 0 53.333333 53.333333h832a53.393333 53.393333 0 0 0 53.333334-53.333333V576a318.573333 318.573333 0 0 1-192 64z m0-597.333333c-153.166667 0-277.333333 124.166667-277.333334 277.333333s124.166667 277.333333 277.333334 277.333333 277.333333-124.166667 277.333333-277.333333-124.166667-277.333333-277.333333-277.333333z m21.333333 405.333333a21.333333 21.333333 0 0 1-42.666667 0V277.333333a21.333333 21.333333 0 0 1 42.666667 0z m-21.333333-234.666667a21.333333 21.333333 0 1 1 21.333333-21.333333 21.333333 21.333333 0 0 1-21.333333 21.333333z" fill="#ffffff" p-id="6440"></path></svg></a></div>
+                <form class="hero-form" action="/">
+                    <div class="hero-form-input">
+                        <select class="hero-email-input" type="email" , placeholder="科目" id="sel" required>
+	<option>数学</option>
+	<option>英语</option>
+	<option>语文</option>
+</select>&nbsp;
+                        <select class="hero-email-input" type="email" , placeholder="科目" id="sel" required>
+	<option>閲卷錯誤</option>
+	<option>加分錯誤</option>
+</select>
+                        <input class="hero-form-submit mDialogs" type="button" value="提交" id="mdialog9">
+                    </div>
+                </form>
+
+            </div>
+            <div class="hero-image">
+                <img src="./img/申述.png" />
+            </div>
+        </div>
+    </header>
+    <script>
+        mdialog9.onclick = function() {
+            Dialog.init("申请中", {
+                mask: 0,
+                addClass: 'dialog_load',
+                time: 1000,
+                after: function() {
+                    Dialog.init('申请成功！', 1000);
+                }
+            });
+        }
+        mdialog6.onclick = function() {
+            Dialog.init("暂无反馈内容", {
+                title: '提示',
+                button: {
+                    确定: function() {
+                        Dialog.close(this);
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

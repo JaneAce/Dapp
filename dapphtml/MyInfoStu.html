@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>个人信息页</title>
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
+    <link href="../dapphtml/css/myinfo/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../dapphtml/css/myinfo/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../dapphtml/css/myinfo/icon.css" rel="stylesheet" type="text/css">
+    <link href="../dapphtml/css/myinfo/simple-line.css" rel="stylesheet" type="text/css">
+    <link href="../dapphtml/css/myinfo/jquery.css" rel="stylesheet">
+    <link href="../dapphtml/css/myinfo/weather.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../dapphtml/css/shenshu/dialog.css">
+    <script src="../dapphtml/external/js/template-web.js"></script>
+    <script src="../dapphtml/external/js/dialog.js"></script>
+    <!-- VarelaRound -->
+    <link href='http://fonts.useso.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <!-- Icon Font - Font Awesome -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./external/z-nav/z-nav.css" rel="stylesheet">
+    <!-- Touch slider - Swiper -->
+    <link href="./external/swiper/idangerous.swiper.css" rel="stylesheet" />
+    <!-- Isotope -->
+    <link href="./external/isotope/isotope.css" rel="stylesheet" />
+    <!-- Magnific popup - responsive popup plugin -->
+    <link href="./external/magnific-popup/magnific-popup.css" rel="stylesheet" />
+    <!-- Custom -->
+    <link href="./css/style.css?v=1" rel="stylesheet" />
+
+    <script src="./external/modernizr/modernizr.custom.js"></script>
+    <!-- <style>
+        #back {
+            margin-top: -7px;
+            margin-left: -70px;
+        }
+        
+        #text {
+            position: absolute;
+            left: 150px;
+            top: 12px;
+        }
+        
+    </style> -->
+    <style>
+        body {
+            background-image: url("../static/image/bg3.jpg");
+            background-size: cover;
+        }
+        
+        .menu-icon {
+            text-align: center;
+        }
+        
+        .gallery-image {
+            border: 2px solid red;
+        }
+        
+        #change {
+            margin-top: -3px;
+        }
+        
+        .xiugai {
+            margin-left: 75px;
+        }
+        
+        .chakan {
+            margin-left: 75px;
+        }
+        
+        .myinfo {
+            margin-left: 75px;
+        }
+        
+        #guanli {
+            margin-top: -5px;
+        }
+        
+        #shenshu_img {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header-fixed">
+                <div class="header-line waypoint" data-animate-down="header-up" data-animate-up="header-down">
+                    <div class="container">
+                    </div>
+                </div>
+
+                <div class="fixed-top header-down">
+                    <div class="container">
+                        <!--  Logo  -->
+                        <a class="logo" href="../Home/FirstView.html">
+                            <h1 class="logo__text">Welcom<span class="highlight">e</span><br>
+                                <span class="logo__slogan" style="font-size:medium">学生信息</span>
+                            </h1>
+                        </a>
+                        <nav class="z-nav">
+                            <a href="#" class="z-nav__toggle">
+                                <span class="menu-icon"><svg t="1646815807191" class="icon" viewBox="0 0 1100 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="28779" width="32" height="32"><path d="M683.460026 773.889666c-3.216382 22.385839-24.040677 38.003505-46.386534 34.773796-22.396946-3.24859-37.981293-24.088434-34.754915-46.437623 2.070213-14.415965 11.42282-25.966508 23.801892-31.538533a40.904469 40.904469 0 0 1 22.603522-3.19528c22.363627 3.258586 37.966855 24.054004 34.736035 46.39764m-29.381692-83.472659c-42.832521-6.162881-82.671896 23.704156-88.832555 66.4556-6.17843 42.79698 23.625302 82.668564 66.474481 88.862543 15.242273 2.20682 30.124703-0.155488 43.227905-6.066256 23.703046-10.659818 41.611939-32.866846 45.601319-60.387124 6.16177-42.833631-23.673059-82.686334-66.47115-88.864763M381.414456 518.792607c-1.563766 10.849735-7.250187 20.448902-16.007497 26.983844-8.822837 6.486074-19.595939 9.30374-30.426794 7.768851-10.818638-1.579315-20.417805-7.264625-26.953857-16.021935-6.581588-8.772859-9.332616-19.577059-7.78551-30.380148 1.563766-10.850846 7.244633-20.446681 16.037484-26.999393a42.219453 42.219453 0 0 1 7.777735-4.590229 40.643471 40.643471 0 0 1 22.617961-3.164183c10.866395 1.600416 20.416694 7.265735 26.999393 16.038595 6.570482 8.746204 9.32151 19.550403 7.741085 30.364598m-29.382803-83.47377c-20.757657-3.007584-41.386482 2.358976-58.185857 14.815792-16.787158 12.564547-27.670213 30.897701-30.678907 51.655358-2.972043 20.742108 2.292338 41.417579 14.845779 58.170308 12.568989 16.784937 30.898811 27.672434 51.609822 30.662247 14.987939 2.162395 29.891471 0.029987 43.291211-6.019609 5.212182-2.354534 10.206681-5.326577 14.929076-8.812842 16.784937-12.567879 27.670213-30.89659 30.657804-51.60649 2.990924-20.793197-2.256798-41.434239-14.862438-58.206959-12.532338-16.800486-30.859939-27.686872-51.60649-30.657805M571.802933 302.409857l0.016659 0.03554c-4.215948 29.355037-31.622941 49.888347-60.92911 45.606872-29.402794-4.235939-49.87502-31.589623-45.65463-60.94577 2.063549-14.252703 9.536972-26.815028 21.051974-35.441284 3.224156-2.384521 6.651557-4.428078 10.230005-6.05515 9.230438-4.147089 19.428234-5.610898 29.680451-4.127098 14.252703 2.064659 26.815028 9.536972 35.442395 21.056417 8.606265 11.485015 12.209145 25.663306 10.162256 39.870473m-40.25253-98.001909c-24.163957-3.507367-48.202412 2.728816-67.729492 17.260286-19.492651 14.593666-32.187141 35.934403-35.661189 60.082812-7.165779 49.808382 27.555818 96.173813 77.375306 103.377353a90.568469 90.568469 0 0 0 50.307054-7.084703c27.57692-12.423497 48.434534-38.213414 53.05253-70.245067 3.454056-24.182837-2.64885-48.196859-17.258065-67.72505-14.611436-19.529302-35.972165-32.174924-60.086144-35.665631" fill="#FF962F" p-id="28780"></path><path d="M951.287115 579.14197c-15.27226 105.94957-70.844807 199.53895-156.500963 263.671115-85.80498 64.079965-191.229223 91.009388-297.117709 75.787106-74.877501-10.809753-143.779818-41.959566-200.900582-90.205293 87.564217-43.179037 205.280902-114.513631 361.463115-231.663896 125.190108-93.974768 209.545718-168.902247 266.371054-228.297579 27.727965 66.414508 37.041701 138.732009 26.685085 210.708547m83.560399-411.522499c-14.298239-26.178638-54.194256-48.169093-163.219158-4.259263-9.704677 4.244824-14.223826 14.786915-10.349953 24.383861 3.859436 9.563627 14.789137 14.227158 24.352764 10.364391 74.53987-30.030299 109.241475-25.536694 115.699783-13.92951 0.235453 0.93515 12.054768 99.189171-365.612425 382.538412-279.413171 209.649007-429.799011 266.303306-494.621987 281.523367-17.533501 4.080451-31.328625 2.564443-36.878438-4.080451-5.849683-7.028061-4.751271-21.638386 2.899852-39.061935 29.688226-67.900529 72.789518-107.480017 73.208226-107.876512 7.024729-6.369458 7.793284-16.689423 2.593319-24.305007-0.214351-0.981796-0.171037-2.008017-0.549762-2.993145-25.792139-64.673041-34.139627-135.594482-24.141744-204.988807C189.749866 246.267557 393.273753 94.06695 611.87443 125.538846c63.884495 9.196009 125.101258 33.850863 177.093136 71.357918 8.353041 6.022941 20.043523 4.145978 26.149762-4.202621 6.022941-8.434117 4.144868-20.125709-4.255931-26.168642-56.845328-41.025527-123.810707-68.020477-193.631514-78.057232-115.809735-16.694976-231.26518 12.743358-324.917866 82.814056-93.684894 70.082915-154.495167 172.497354-171.156824 288.295983-10.693137 74.101171-1.920278 149.639497 24.732599 219.090464-15.755384 16.583913-48.401215 54.901727-73.104937 111.361666-18.698551 42.735896-6.386117 67.233041 2.647739 78.080555 8.81062 10.624278 30.203557 26.87056 74.197796 16.587246 27.923436-6.517171 64.177701-18.408677 110.245484-38.974196 64.850742 59.222074 144.912659 97.331089 232.440226 109.952278 85.193024 12.262456 168.325831-0.977354 241.564043-33.971922 132.263705-59.527497 232.32472-183.3482 254.49843-337.173657 12.144729-84.412252-0.479792-169.2421-36.095445-246.117623 103.944885-118.07764 86.321423-163.869987 82.566386-170.793648" fill="#FF962F" p-id="28781"></path></svg></span>
+                                <span class="menu-text">导航栏</span>
+                                <div class="menu-head"></div>
+                            </a>
+                            <ul class="z-nav__list">
+                                <li class="z-nav__item">
+                                    <span class="z-nav__toggle-sub plus"><i class="fa fa-plus"></i><i class="fa fa-minus"></i></span>
+                                    <span class="z-nav__link" id="home">首页</span>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="devider-color"></div>
+
+                </div>
+
+            </div>
+        </header>
+        <section class="page-indecator">
+            <div class="container">
+
+                <div class="devider devider--bottom-md"></div>
+            </div>
+        </section>
+        <section>
+            <div class="row">
+                <div class="col-12">
+                    <div class="info_items bg_green d-flex align-items-center">
+                        
+                        <div class="info_item_content">
+
+                            <h3>学生姓名:</h3><div id="schoolName"></div>
+                            <hr/>
+                                <h3><span>学生账号:</span><div id="schooladdress"></div></h3>
+                                    <div id="address_info"></div>
+                                
+                            
+                            <hr/>
+                            <h3 class="progress-description">学校名称:</h3>
+                            <div id="hash" style="font-size:xx-small"></div>
+                            <hr/>
+                        </div>
+                    </div>
+                </div>
+                <!-- /info-box-content -->
+                <!-- /info-box-content -->
+
+
+                <!-- Content_right_End -->
+                <!-- Footer -->
+            </div>
+        </section>
+                    <script type="text/javascript" src="../dapphtml/external/myinfojs/jquery.js"></script>
+                    <script type="text/javascript" src="../dapphtml/external/myinfojs/popper.js"></script>
+                    <script type="text/javascript" src="../dapphtml/external/myinfojs/bootstrap.js"></script>
+                    <script type="text/javascript" src="../dapphtml/external/myinfojs/custome.js"></script>
+
+                    <!--Morris Chart-->
+                    <script src="../dapphtml/external/myinfojs/morris.js"></script>
+                    <script src="../dapphtml/external/myinfojs/raphael.js"></script>
+                    <!--morris chart initialization-->
+                    <script src="../dapphtml/external/myinfojs/morris-init.js"></script>
+                    <!--chartjs Total Profit,New Orders,Yearly Revineue,New Users-->
+                    <script src="../dapphtml/external/myinfojs/Chart.js"></script>
+                    <script src="../dapphtml/external/myinfojs/chartjs-init.js"></script>
+                    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script>
+            window.jQuery || document.write('<script src="external/jquery/jquery-1.10.1.min.js"><\/script>')
+        </script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="./external/z-nav/jquery.mobile.menu.js"></script>
+        <script src="./external/swiper/idangerous.swiper.js"></script>
+        <script src="./external/twitterfeed/twitterfeed.js"></script>
+        <script src="./external/scrollto/jquery.scrollTo.min.js"></script>
+        <script src="./external/waypoint/waypoints.min.js"></script>
+        <script src="./external/isotope/jquery.isotope.js"></script>
+        <script src="./external/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script src="./external/js/custom.js"></script>
+<script>
+    function  getQueryString(name) {
+                    var  reg =  new  RegExp( "(^|&)"  + name +  "=([^&]*)(&|$)" ,  "i" );
+                    var  r = window.location.search.substr(1).match(reg);
+                    if  ( r !=  null  ){
+                        return  decodeURI(r[2]);
+                    } else {
+                        return  null ;
+                    } 
+                }
+    var Studentaccount = getQueryString('ac')
+    $("#home").click(function(){
+        window.location.href="../dapphtml/inx.html?ac="+Studentaccount
+    })
+    function GetInfo(){
+       $.ajax({
+           method:"get",
+           url:"http://localhost:8000/Student",
+           data:{ac:Studentaccount},
+           success:function(res){
+            document.getElementById("schoolName").innerHTML=res.data[0].student_name
+            document.getElementById("address_info").innerHTML=res.data[0].student_account
+            document.getElementById("hash").innerHTML = res.data[0].StudentSchool
+            console.log("/reg",res)
+            
+           }
+       })
+    }
+    GetInfo()
+</script>
+</body>
+
+</html>
