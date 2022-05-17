@@ -1,0 +1,825 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_collegeName",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "_collegeAccounts",
+				"type": "address"
+			}
+		],
+		"name": "addCollege",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "string",
+				"name": "eventType",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "schoolName",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "timestamp",
+				"type": "uint256"
+			}
+		],
+		"name": "addschoolEvnt",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "subjectName",
+				"type": "string"
+			}
+		],
+		"name": "addSticker",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "string",
+				"name": "eventType",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "timestamp",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "studentAccounts",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "studentName",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "CET4",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "Credit",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "GraduationDissertation",
+				"type": "uint256"
+			}
+		],
+		"name": "addstudentcertsEvnt",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "string",
+				"name": "eventType",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "timestamp",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "Subject",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "Score",
+				"type": "uint256"
+			}
+		],
+		"name": "addstudentsubjectEvnt",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "studentAccounts",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "studentName",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "CET4",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "Credit",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "GraduationDissertation",
+				"type": "uint256"
+			}
+		],
+		"name": "createoneCerts",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_studentAccounts",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "subjectName",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_Score",
+				"type": "uint256"
+			}
+		],
+		"name": "createoneEducational",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_schoolName",
+				"type": "string"
+			}
+		],
+		"name": "createSchool",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_studentSchool",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "collegeName",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "_studentAccounts",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_studentName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_studentSex",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_studentId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_studentSpecialized",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_studentLevel",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_studentSystem",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_studentstartTime",
+				"type": "uint256"
+			}
+		],
+		"name": "createStudent",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "colleges",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "collegeName",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "collegeAccounts",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "educationalCerts",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "studentAccounts",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "studentName",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "CET4",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "Credit",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "GraduationDissertation",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "educationalSubjects",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "studentAccounts",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "Subject",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "Score",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getBlockCertsTime",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getBlockCollegetime",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getBlockSchooltime",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getBlockStudenttime",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getBlockSubjectTime",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "collegetime",
+				"type": "uint256"
+			}
+		],
+		"name": "getcollegeNews",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "collegeName",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "collegeAccounts",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "educationalCertsTime",
+				"type": "uint256"
+			}
+		],
+		"name": "geteducationalCerts",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "studentAccounts",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "studentName",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "CET4",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "Credit",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "GraduationDissertation",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "schooltime",
+				"type": "uint256"
+			}
+		],
+		"name": "getschoolNews",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "schoolName",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "schoolAccounts",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "studenttime",
+				"type": "uint256"
+			}
+		],
+		"name": "getstudentNews",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "studentName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "studentSchool",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "collegeName",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "studentAccounts",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "studentSex",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "studentId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "studentSpecialized",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "studentLevel",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "studentSystem",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "studentstartTime",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "educationalSubjecttime",
+				"type": "uint256"
+			}
+		],
+		"name": "getsubjectNews",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "studentAccounts",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "Subject",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "Score",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_collegeName",
+				"type": "string"
+			}
+		],
+		"name": "iscollegekExist",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "a",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "b",
+				"type": "string"
+			}
+		],
+		"name": "isEqual",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "pure",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_schoolName",
+				"type": "string"
+			}
+		],
+		"name": "isschoolExist",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_studentName",
+				"type": "string"
+			}
+		],
+		"name": "isstudentExist",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "subjectName",
+				"type": "string"
+			}
+		],
+		"name": "isSubjectExist",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "schools",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "schoolName",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "schoolAccounts",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "schoolIsExist",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "students",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "studentName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "studentSchool",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "collegeName",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "studentAccounts",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "studentSex",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "studentId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "studentSpecialized",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "studentLevel",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "studentSystem",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "studentstartTime",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
